@@ -188,13 +188,11 @@ public struct BInt:
 	internal var limbs = Limbs()
 
 	// Required by the protocol "Numeric".
-	public typealias Magnitude = UInt64
+	public typealias Magnitude = BInt
 
-	// Required by the protocol "Numeric". It's pretty useless because the magnitude of a BInt won't
-	// fit into a UInt64 generally, so we just return the first limb of the BInt.
-	public var magnitude: UInt64
+	public var magnitude: BInt
 	{
-		return self.limbs[0]
+		return self
 	}
 
 	// Required by the protocol "BinaryInteger".
